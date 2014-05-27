@@ -89,8 +89,8 @@ body {
         border-bottom: 0;
     }
 }
-body { margin:0; padding:0; }
-#map { position:absolute; top:60px; bottom:0; width:100%; }
+body { margin:0; padding:0; background-color:#666;}
+#map { position:absolute; top:60px; bottom:0; width:100%;z-index:2; }
 .leaflet-popup{
     img{
         width: 100%;
@@ -98,8 +98,33 @@ body { margin:0; padding:0; }
 }
 .filters{
     background-color:#666;
-    height: 60px;
-    padding-top: 20px;
+    padding-top: 31px;
+    position: absolute;
+    z-index: 99999;
+
+    &.countries{
+        left: 100px;
+    }
+    &.regions{
+        left: 200px;
+    }
+
+    ul{
+        padding: 0;
+    }
+
+    &:hover li{
+        display: block;
+    }
+
+    li{
+        list-style: none;
+        display: none;
+
+        &.active{
+            display: block;
+        }
+    }
     .filter{
         color: #fff;
         padding: 0 30px;
